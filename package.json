@@ -1,0 +1,28 @@
+{
+  "name": "bridgetown-cards",
+  "version": "1.0.0",
+  "private": true,
+  "scripts": {
+    "esbuild": "node esbuild.config.js --minify",
+    "esbuild-dev": "node esbuild.config.js --watch"
+  },
+  "devDependencies": {
+    "convert-source-map": "^1.8.0",
+    "esbuild": "^0.14.2",
+    "glob": "^7.2.0",
+    "postcss": "^8.4.4",
+    "postcss-flexbugs-fixes": "^5.0.2",
+    "postcss-import": "^14.0.2",
+    "postcss-load-config": "^3.1.0",
+    "postcss-preset-env": "^7.0.1"
+  },
+  "resolutions": {
+    "@ruby2js/ruby2js": "^0.2.1"
+  },
+  "dependencies": {
+    "@hotwired/turbo": "^7.1.0",
+    "@ruby2js/webpack-loader": "^2.0.2",
+    "@shoelace-style/shoelace": "^2.0.0-beta.51",
+    "smoothscroll-polyfill": "^0.4.4"
+  }
+}

@@ -1,0 +1,44 @@
+---
+layout: default
+---
+
+<section-wrapper style="padding-top:3rem"><section markdown="1">
+  <h2>{{ resource.data.title | smartify }}</h2>
+
+  <turbo-frame id="{{ resource.relative_url }}">
+    <p class="tags" style="margin-bottom: 0.5em">
+      <strong>Tagged:</strong>
+      {%
+        colors = [:success, :warning, :danger]
+        i = -1
+      %}
+      {% resource.data.tags.each do |tag| %}
+        {% i == 2 ? i = 0 : i += 1 %}
+        <sl-tag type="{{ colors[i] }}" pill>{{ tag }}</sl-tag>
+      {% end %}
+    </p>
+
+    <p style="margin-bottom: 0.5em">
+      <strong>Added by:</strong>
+      {% if resource.data.twitter %}
+        <a href="https://twitter.com/{{ resource.data.twitter}}">
+          <sl-icon library="remixicon" name="logos/twitter-fill" slot="icon">
+          </sl-icon>@{{ resource.data.twitter }}</a>
+      {% end %}
+      {% if resource.data.github %}
+        <a href="https://github.com/{{ resource.data.github}}">
+          <sl-icon library="remixicon" name="logos/github-fill" slot="icon">
+          </sl-icon>@{{ resource.data.github }}</a>
+      {% end %}
+    </p>
+
+    <p style="margin-bottom: 2em">
+      <strong>Tested on:</strong>
+      Bridgetown v{{ resource.data.version }}
+    </p>
+
+    {%= yield %}
+  </turbo-frame>
+
+  <p style="margin-top: 3rem; text-align: center"><sl-button type="primary" outline href="/">Return to Cards</sl-button></p>
+</section></section-wrapper>

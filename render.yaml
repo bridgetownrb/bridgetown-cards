@@ -1,0 +1,10 @@
+services:
+  - type: web
+    name: bridgetown-cards
+    env: static
+    repo: https://github.com/bridgetownrb/bridgetown-cards
+    buildCommand: bin/bridgetown deploy
+    staticPublishPath: ./output
+    envVars:
+      - key: BRIDGETOWN_ENV
+        value: production
