@@ -1,6 +1,6 @@
 :root {
-  --body-background: rgb(var(--sl-color-neutral-50));
-  --body-color: rgb(var(--sl-color-neutral-700));
+  --body-background: var(--sl-color-neutral-50);
+  --body-color: var(--sl-color-neutral-700);
   --body-size: 19px;
 
   --sl-font-sans: RedHatText, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Helvetica, Arial, sans-serif, 'Apple Color Emoji', 'Segoe UI Emoji', 'Segoe UI Symbol';
@@ -11,13 +11,16 @@
   --body-line-height: 1.5;
 
   --color-dark-green: #14574E;
-  --color-dark-green-old: #0f5348;
   --color-medium-green: #246e62;
+  --color-light-green: #218675;
   --color-orange: #f47c3c;
   --color-light-orange: #ff9359;
   --color-brick: #C14849;
 
   --sl-border-radius-medium: 0.35rem;
+
+  --sl-color-primary-600: var(--color-medium-green);
+  --sl-color-primary-500: var(--color-light-green);
 }
 
 @keyframes fadeIn {
@@ -100,7 +103,7 @@ h1, h2, h3, h4, h5 {
   font-weight: 900;
   letter-spacing: -0.01em;
   margin-top: 0;
-  color: rgb(var(--sl-color-neutral-600));
+  color: var(--sl-color-neutral-600);
 
   &.serif {
     font-family: var(--display-serif);
@@ -164,7 +167,7 @@ a {
 
 hr {
   border: none;
-  border-top: 3px solid rgb(var(--sl-color-neutral-300));
+  border-top: 3px solid var(--sl-color-neutral-300);
   margin: 2rem auto;
 }
 
@@ -177,8 +180,8 @@ section-wrapper {
 }
 
 section-wrapper[invert], footer {
-  background: rgb(var(--sl-color-neutral-900));
-  color: rgb(var(--sl-color-neutral-50));
+  background: var(--sl-color-neutral-900);
+  color: var(--sl-color-neutral-50);
 
   & h2 {
     color: var(--color-brick);
@@ -204,11 +207,11 @@ section {
     padding-left: 1.5rem;
     padding-right: 1.5rem;
 
-    @media (max-width: 1000px) {
+    @media (max-width: 1100px) {
       grid-template-columns: 1fr 1fr;
     }
 
-    @media (max-width: 650px) {
+    @media (max-width: 750px) {
       grid-template-columns: 1fr;
 
       padding-left: 0.75rem;
@@ -330,7 +333,7 @@ p.heading-icon {
   text-align: center;
   font-size: 250%;
   margin-bottom: 0;
-  color: rgb(var(--sl-color-neutral-400));
+  color: var(--sl-color-neutral-400);
 }
 
 section-wrapper[invert] p.heading-icon {
