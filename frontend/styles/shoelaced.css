@@ -16,7 +16,7 @@ sl-button {
 sl-card {
   &::part(base) {
     box-shadow: var(--sl-shadow-large);
-    border-top: 5px solid var(--sl-color-warning-300);
+    border-top: 5px solid var(--sl-color-primary-500);
   }
 
   & h3 {
