@@ -97,7 +97,7 @@ window.addEventListener("turbo:load", () => {
 
 That is truly the only custom JavaScript needed. Everything else in the navigation flow is handled directly by Turbo.
 
-**So to recap:**
+#### So to Recap:
 
 Each card on the homepage has a "Read" button. When you click on it, the link inside the button's frame tells the frame in the nearby dialog box to load content from the card's content URL. While that response is in fact a complete HTML layout, _only the content within the matching frame ID_ is loaded into the dialog's frame. The dialog opens, and right away you see the content appear. Yet if you were to open the card resource URL in a new tab, you'd see a regular page with that same content. **Magic!**
 
