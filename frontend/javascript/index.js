@@ -24,32 +24,6 @@ registerIconLibrary('remixicon', {
     return `https://cdn.jsdelivr.net/npm/remixicon@2.5.0/icons/${match[1]}/${match[2]}${match[3] || '-line'}.svg`;
   },
   mutator: svg => svg.setAttribute('fill', 'currentColor')
-});
-
-window.addEventListener("DOMContentLoaded", () => {
-  const dialog = document.querySelector("sl-dialog#donation")
-
-  if (dialog) {
-    if ((window.innerWidth < 500 && window.innerHeight < 740) || window.innerHeight < 700) {
-      dialog.classList.add("scrollable")
-    }
-
-    const closeButton = dialog.querySelector("sl-button[slot='footer']")
-
-    closeButton.addEventListener("click", () => dialog.hide())
-
-    document.querySelectorAll("sl-button[data-open-donate]").forEach(item => {
-      item.addEventListener("click", () => {
-        dialog.show()
-        setTimeout(() => {
-          dialog.shadowRoot.querySelector("[part='body']").scrollTo({top: 40, behavior: "smooth"})
-          setTimeout(() => {
-            dialog.shadowRoot.querySelector("[part='body']").scrollTo({top: 0, behavior: "smooth"})
-          }, 500)
-        }, 400)
-      })
-    })
-  }
 })
 
 /**************
@@ -106,7 +80,7 @@ masonryEvents.forEach(event => {
 
 window.addEventListener("turbo:load", () => {
   document.querySelectorAll("sl-card sl-button").forEach(button => {
-    button.addEventListener("click", (e) => {
+    button.addEventListener("click", e => {
       e.currentTarget.closest('.masonry-item').querySelector('sl-dialog').show()
 
       if (e.target.localName != "a") {

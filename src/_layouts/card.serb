@@ -2,10 +2,10 @@
 layout: default
 ---
 
-<section-wrapper style="padding-top:3rem"><section markdown="1">
+<section-wrapper style="padding-top:3rem"><section>
   <h2>{{ resource.data.title | smartify }}</h2>
 
-  <turbo-frame id="{{ resource.relative_url }}">
+  <turbo-frame id="{{ resource.relative_url }}" target="_top">
     <p class="tags" style="margin-bottom: 0.5em">
       <strong>Tagged:</strong>
       {%
@@ -40,5 +40,10 @@ layout: default
     {%= yield %}
   </turbo-frame>
 
-  <p style="margin-top: 3rem; text-align: center"><sl-button type="primary" outline href="/">Return to Cards</sl-button></p>
+  <p style="margin-top: 3rem; text-align: center">
+    <sl-button type="primary" outline href="/">
+      <sl-icon slot="prefix" library="remixicon" name="system/arrow-left-circle"></sl-icon>
+      Return to Cards
+    </sl-button>
+  </p>
 </section></section-wrapper>

@@ -29,3 +29,5 @@ permalink: pretty
 collections:
   cards:
     output: true
+    sort_by: date
+    sort_direction: descending

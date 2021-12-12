@@ -1,0 +1,48 @@
+{% collections.cards.resources.each do |card| %}
+  <div class="masonry-item">
+    <sl-card class="masonry-content">
+      <div slot="header">
+        <h3>{{ card.data.title | smartify }}</h3>
+      </div>
+
+      {{ card.data.description | markdownify }}
+      
+      <div slot="footer">
+        <ui-label class="tags" style="padding-right:0.5rem">
+          {%
+            colors = [:success, :warning, :danger]
+            i = -1
+          %}
+          {% card.data.tags.each do |tag| %}
+            {% i == 2 ? i = 0 : i += 1 %}
+            <sl-tag type="{{ colors[i] }}" size="small" pill>{{ tag }}</sl-tag>
+          {% end %}
+        </ui-label>
+
+        <sl-button type="primary">
+          <sl-icon slot="prefix" library="remixicon" name="development/code-box-fill"></sl-icon>
+          <turbo-frame>
+            <a href="{{ card.relative_url }}" data-turbo-frame="{{ card.relative_url }}">
+              Read…
+            </a>
+          </turbo-frame>
+        </sl-button>
+      </div>
+    </sl-card>
+
+    <sl-dialog style="--width: min(90vw,1400px)">
+      <h3 slot="label" class="colorful">{{ card.data.title | smartify }}</h3>
+
+      <turbo-frame id="{{ card.relative_url }}" target="_top" style="margin-bottom:5rem; display:block">
+        <p style="margin:4rem 0; text-align:center">
+          <sl-spinner></sl-spinner>
+        </p>
+      </turbo-frame>
+
+      <sl-button slot="footer" type="primary" onclick="this.closest('sl-dialog').hide()">
+        <sl-icon slot="prefix" library="remixicon" name="system/arrow-left-circle"></sl-icon>
+        Return to Cards
+      </sl-button>
+    </sl-dialog>
+  </div>
+{% end %}

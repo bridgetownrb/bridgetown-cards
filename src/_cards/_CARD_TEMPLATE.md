@@ -1,6 +1,8 @@
 ---
-# Add your card metadata below.
-# The twitter/github handles can be either/or (at least one should be present).
+# Add your card metadata and content below.
+#
+# The Twitter/Github handles can be either/or (at least one should be present).
+#
 # The version should be what you used when you tried this out yourself. You can
 #   get that by running `bin/bridgetown -v`
 #   (note that we're only accepting content for Bridgetown 1.0+)
@@ -22,6 +24,12 @@ Content is king!
 def add(x, y)
   x + y
 end
+
+add 10 + 20
 ```
 
 MINASWAN!
+
+#### Use h4 tags for content headers
+
+Paragraph paragraph.
