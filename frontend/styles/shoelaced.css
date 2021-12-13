@@ -14,7 +14,6 @@ sl-button {
 }
 
 sl-card {
-  transform-origin: 70% 50%;
   transform: translateY(0px) rotate(0deg);
   transition: transform 0.15s cubic-bezier(0.45, 0, 0.55, 1);
 
@@ -40,12 +39,24 @@ sl-card {
 }
 
 
-.masonry-item:nth-child(odd) sl-card:hover {
-  transform: translateY(-6px) rotate(-2.5deg);
+.masonry-item:nth-child(odd) {
+  & sl-card {
+    transform-origin: 70% 70%;
+  }
+
+  & sl-card:hover {
+    transform: translateY(-6px) rotate(-2.5deg);
+  }
 }
 
-.masonry-item:nth-child(even) sl-card:hover {
-  transform: translateY(-6px) rotate(2.5deg);
+.masonry-item:nth-child(even) {
+  & sl-card {
+    transform-origin: 30% 70%;
+  }
+
+  & sl-card:hover {
+    transform: translateY(-6px) rotate(2.5deg);
+  }
 }
 
 sl-dialog {

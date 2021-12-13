@@ -8,6 +8,7 @@ import '@shoelace-style/shoelace/dist/components/icon/icon.js'
 import '@shoelace-style/shoelace/dist/components/input/input.js'
 import '@shoelace-style/shoelace/dist/components/tag/tag.js'
 import { registerIconLibrary } from '@shoelace-style/shoelace/dist/utilities/icon-library.js'
+import { setAnimation } from '@shoelace-style/shoelace/dist/utilities/animation-registry.js'
 
 import * as Turbo from "@hotwired/turbo"
 
@@ -86,6 +87,32 @@ window.addEventListener("turbo:load", () => {
       if (e.target.localName != "a") {
         const anchor = e.currentTarget.querySelector("a")
         if (anchor) anchor.click()
+      }
+    })
+  })
+
+  // Change the animation for odd numbered dialogs
+  document.querySelectorAll(".masonry-item:nth-child(odd) sl-dialog").forEach(dialog => {
+    setAnimation(dialog, 'dialog.show', {
+      keyframes: [
+        { transform: 'rotate(-5deg) scale(0.6)', opacity: '0' },
+        { transform: 'rotate(0deg) scale(1)', opacity: '1' }
+      ],
+      options: {
+        duration: 230
+      }
+    })
+  })
+
+  // Change the animation for even numbered dialogs
+  document.querySelectorAll(".masonry-item:nth-child(even) sl-dialog").forEach(dialog => {
+    setAnimation(dialog, 'dialog.show', {
+      keyframes: [
+        { transform: 'rotate(5deg) scale(0.6)', opacity: '0' },
+        { transform: 'rotate(0deg) scale(1)', opacity: '1' }
+      ],
+      options: {
+        duration: 230
       }
     })
   })
