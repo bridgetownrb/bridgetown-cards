@@ -14,12 +14,17 @@ sl-button {
 }
 
 sl-card {
+  transform-origin: 70% 50%;
+  transform: translateY(0px) rotate(0deg);
+  transition: transform 0.15s cubic-bezier(0.45, 0, 0.55, 1);
+
   &::part(base) {
+    transition: box-shadow 0.15s cubic-bezier(0.45, 0, 0.55, 1);
     box-shadow: var(--sl-shadow-large);
     border-top: 5px solid var(--sl-color-primary-500);
   }
 
-  & h3 {
+  & h3, & p:last-of-type {
     margin-bottom: 0;
   }
 
@@ -27,7 +32,20 @@ sl-card {
     display: flex; 
     justify-content: space-between; 
     align-items: center;
-  }  
+  }
+
+  &:hover::part(base) {
+    box-shadow: var(--sl-shadow-x-large);
+  }
+}
+
+
+.masonry-item:nth-child(odd) sl-card:hover {
+  transform: translateY(-6px) rotate(-2.5deg);
+}
+
+.masonry-item:nth-child(even) sl-card:hover {
+  transform: translateY(-6px) rotate(2.5deg);
 }
 
 sl-dialog {
