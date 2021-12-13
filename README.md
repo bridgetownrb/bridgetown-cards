@@ -1,6 +1,6 @@
 # How to Contribute to Bridgetown Cards
 
-It's very simple! First, you'll want to fork this repo. Then add a new file to the `src/_cards/2021`/`2022` folder using the following template:
+It's very simple! First, you'll want to fork this repo. Then add a new file to the `src/_cards/2021`/`2022` folder using the following template and a `YYYY-MM-DD-slug.md` filename:
 
 https://github.com/bridgetownrb/bridgetown-cards/blob/main/src/_cards/_CARD_TEMPLATE.md
 
@@ -59,12 +59,3 @@ bin/bridgetown console
 ```
 
 > Learn more: [Bridgetown CLI Documentation](https://www.bridgetownrb.com/docs/command-line-usage)
-
-## Contributing
-
-1. Fork it
-2. Clone the fork using `git clone` to your local development machine.
-3. Create your feature branch (`git checkout -b my-new-feature`)
-4. Commit your changes (`git commit -am 'Add some feature'`)
-5. Push to the branch (`git push origin my-new-feature`)
-6. Create a new Pull Request
