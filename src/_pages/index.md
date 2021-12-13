@@ -3,6 +3,7 @@
 
 layout: default
 template_engine: serbea
+image: "https://mugshotbot.com/m?theme=bold&mode=light&color=246e62&pattern=bank_note&hide_watermark=true&url=https%3A%2F%2Fbridgetown.cards"
 ---
 
 <section-wrapper class="fade-in-animation" style="padding-top:3rem"><section markdown="1">
