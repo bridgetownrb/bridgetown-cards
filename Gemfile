@@ -24,3 +24,5 @@ gem "bridgetown-core", github: "bridgetownrb/bridgetown", branch: "esbuild-bundl
 gem "puma", "~> 5.2"
 
 gem "ruby2js", "~> 4.2"
+
+gem "bridgetown-seo-tag", "~> 5.0", :group => :bridgetown_plugins

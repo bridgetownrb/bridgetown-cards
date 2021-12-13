@@ -9,8 +9,6 @@ tags:
 - Shoelace
 ---
 
-{% raw %}
-
 When you click on a **Read** button to bring up a card on this website, the content is loaded asynchronously inside the modal dialog that pops up. You'd be forgiven for assuming that specific chunk of HTML is served verbatim from the server. But if you actually look at the request/response in your dev tools, you'll discover it's sending the exact same HTML over the wire as if you went to that URL directly (and you can!)—including _all_ of the HTML layout, the HTML `<head>`, etc.
 
 How is this possible? Well it's all thanks to a little [Hotwire](https://hotwired.dev) magic…Turbo specifically. You can easily add Turbo to your own site by running `bin/bridgetown configure turbo`. But it's not always immediately apparent what you can actually **do** with Turbo once you've installed it. So let's break this all down, shall we?
@@ -102,5 +100,3 @@ That is truly the only custom JavaScript needed. Everything else in the navigati
 Each card on the homepage has a "Read" button. When you click on it, the link inside the button's frame tells the frame in the nearby dialog box to load content from the card's content URL. While that response is in fact a complete HTML layout, _only the content within the matching frame ID_ is loaded into the dialog's frame. The dialog opens, and right away you see the content appear. Yet if you were to open the card resource URL in a new tab, you'd see a regular page with that same content. **Magic!**
 
 You can inspect all of this code in action [in the Bridgetown Cards repo](https://github.com/bridgetownrb/bridgetown-cards). I hope it helps provide inspiration for your own interesting Turbo navigation flows!
-
-{% endraw %}

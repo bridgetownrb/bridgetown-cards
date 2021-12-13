@@ -10,8 +10,6 @@ tags:
 - Serbea
 ---
 
-{% raw %}
-
 **Note:** this technique requires that you use ERB or [Serbea](https://www.serbea.dev) as your template language. [Here's information on how to use Ruby components in Brigdgetown.](https://www.bridgetownrb.com/docs/components/ruby)
 
 Let's first look at the scenario where you'd like to display a resource differently depending on the category it's in. The naïve way to do it would be to add a conditional to your template directly and render different components accordingly:
@@ -111,5 +109,3 @@ Now that you have your base class and subclasses set up, here's how you render t
 The first part of the method call is `Resources::BaseComponent.component_for_resource(resource)`. This passes the resource to the `component_for_resource` method which you saw defined above, and the return value is a specific component class. That component class in turn is instantiated with the resource, and possibly other optional keyword arguments.
 
 One potential gotcha to be aware of if there's no matching category or collection, the above code as written would raise an error since the `new` method would be called on `nil`. You could fix this by adding a `UnknownComponent` subclass and returning that in an `else` clause within the `case` statement. Then you'd just need to figure out what `UnknownComponent` renders in its template. An exercise left for the reader!
-
-{% endraw %}
