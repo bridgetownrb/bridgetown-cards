@@ -1,5 +1,5 @@
 ---
-title: Add a Table of Contents to Markdown
+title: Add a Table of Contents to Your Markdown Page
 description: If you have a long Markdown page and would like a simple way to navigate to various points of interest, here's a helper which can't be beat.
 twitter: jaredcwhite
 github: jaredcwhite
