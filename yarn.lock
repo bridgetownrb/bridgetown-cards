@@ -27,10 +27,10 @@
   resolved "https://registry.yarnpkg.com/@popperjs/core/-/core-2.10.2.tgz#0798c03351f0dea1a5a4cabddf26a55a7cbee590"
   integrity sha512-IXf3XA7+XyN7CP9gGh/XB0UxVMlvARGEgGXLubFICsUMGz6Q+DU+i4gGlpOxTjKvXjkJDJC8YdqdKkDj9qZHEQ==
 
-"@ruby2js/esbuild-plugin@^0.0.1":
-  version "0.0.1"
-  resolved "https://registry.yarnpkg.com/@ruby2js/esbuild-plugin/-/esbuild-plugin-0.0.1.tgz#f0f939fe5b405f17031713e0be1f27e8048adedc"
-  integrity sha512-zfxWeIknSMPyyhJfCkOsHEw9mU25Uyf80qQr8OalGKUTleZVVgQ+MkDz1F9NUIT1s2z1bdAHh0nyIkHHMGNRUg==
+"@ruby2js/esbuild-plugin@^0.0.2":
+  version "0.0.2"
+  resolved "https://registry.yarnpkg.com/@ruby2js/esbuild-plugin/-/esbuild-plugin-0.0.2.tgz#ce0a42ad59dff4e80e7bddac55c93427a6d25a96"
+  integrity sha512-gcqCBel1h7o+tJWPPL6wI4kQbBfi/BdrLmTnM+ok4dPHde+0Bb5rj0gab6S+RoXfIqXg+JoNuV8VCTNhv1+bzQ==
   dependencies:
     "@ruby2js/ruby2js" ">0.0.1"
     convert-source-map "^1.8.0"

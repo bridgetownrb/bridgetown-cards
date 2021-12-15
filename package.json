@@ -17,7 +17,7 @@
   },
   "dependencies": {
     "@hotwired/turbo": "^7.1.0",
-    "@ruby2js/esbuild-plugin": "^0.0.1",
+    "@ruby2js/esbuild-plugin": "^0.0.2",
     "@shoelace-style/shoelace": "^2.0.0-beta.62",
     "smoothscroll-polyfill": "^0.4.4"
   }
