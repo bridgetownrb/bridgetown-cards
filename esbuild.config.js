@@ -10,7 +10,6 @@ const esbuildOptions = {
   target: "es2020",
   plugins: [
     ruby2js({
-      buildFilter: /(\.js)?\.rb$/,
       eslevel: 2020,
       filters: ["camelCase", "functions", "lit", "esm", "return"]
     }),
