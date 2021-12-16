@@ -30,7 +30,7 @@ const importGlobPlugin = () => ({
       const adjustedPath = args.path.replace(/^bridgetownComponents\//, "../../src/_components/")
 
       return {
-        path: path.resolve(args.resolveDir, adjustedPath),
+        path: adjustedPath,
         namespace: "import-glob",
         pluginData: {
           path: adjustedPath,
@@ -116,11 +116,6 @@ const bridgetownPreset = (outputFolder) => ({
       return { path: args.path, external: true }
     })
 
-    // Ensure any barebones CSS imports like `index.css` get resolved to within the styles folder
-    build.onResolve({ filter: /^[^./@].*?\.css$/ }, args => {
-      return { path: path.join(args.resolveDir, "../styles", args.path) }
-    })
-
     build.onStart(() => {
       console.log("esbuild: frontend bundling started...")
     })
@@ -156,7 +151,7 @@ const bridgetownPreset = (outputFolder) => ({
           // We have an entrypoint!
           manifest[stripPrefix(value.entryPoint)] = outputPath
           entrypoints.push([outputPath, fileSize(key)])
-        } else if (key.match(/index\.[^-.]*\.css/) && inputs.find(item => item.endsWith("index.css"))) {
+        } else if (key.match(/index(\.js)?\.[^-.]*\.css/) && inputs.find(item => item.endsWith("index.css"))) {
           // Special treatment for index.css
           manifest[stripPrefix(inputs.find(item => item.endsWith("index.css")))] = outputPath
           entrypoints.push([outputPath, fileSize(key)])
@@ -205,13 +200,16 @@ module.exports = (outputFolder, esbuildOptions) => {
       ".ttf": "file",
       ".eot": "file",
     },
+    resolveExtensions: [".tsx",".ts",".jsx",".js",".css",".json",".js.rb"],
+    nodePaths: ["frontend/javascript", "frontend/styles"],
     watch: process.argv.includes("--watch"),
     minify: process.argv.includes("--minify"),
     sourcemap: true,
+    target: "es2016",
     entryPoints: ["frontend/javascript/index.js"],
+    entryNames: "[dir]/[name].[hash]",
     outdir: path.join(process.cwd(), `${outputFolder}/_bridgetown/static`),
     metafile: true,
-    entryNames: "[dir]/[name].[hash]",
     ...esbuildOptions,
   }).catch(() => process.exit(1))
 }

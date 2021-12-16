@@ -17,12 +17,10 @@ git_source(:github) { |repo| "https://github.com/#{repo}.git" }
 # Happy Bridgetowning!
 
 gem "bridgetown", "~> 1.0.0.alpha11"
-gem "bridgetown-core", github: "bridgetownrb/bridgetown", branch: "esbuild-bundling", ref: "d632a8e162a7587000fa4bd1e69b13009551eedd"
+gem "bridgetown-core", github: "bridgetownrb/bridgetown", branch: "esbuild-bundling", ref: "435bf5b5f445b9d190a24dc81b6f7a7be5915fae"
 
 # Puma is a Rack-compatible server
 # (you can optionally limit this to the "development" group)
 gem "puma", "~> 5.2"
-
-gem "ruby2js", "~> 4.2"
 
 gem "bridgetown-seo-tag", "~> 5.0", :group => :bridgetown_plugins
