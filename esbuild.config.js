@@ -7,6 +7,7 @@ const ruby2js = require("@ruby2js/esbuild-plugin")
 
 const esbuildOptions = {
   entryPoints: ["frontend/javascript/index.js.rb"],
+  target: "es2020",
   plugins: [
     ruby2js({
       buildFilter: /(\.js)?\.rb$/,
