@@ -1,7 +1,7 @@
 GIT
   remote: https://github.com/bridgetownrb/bridgetown.git
-  revision: d632a8e162a7587000fa4bd1e69b13009551eedd
-  ref: d632a8e162a7587000fa4bd1e69b13009551eedd
+  revision: 435bf5b5f445b9d190a24dc81b6f7a7be5915fae
+  ref: 435bf5b5f445b9d190a24dc81b6f7a7be5915fae
   branch: esbuild-bundling
   specs:
     bridgetown-builder (1.0.0.alpha11)
