@@ -8,11 +8,11 @@ code, pre {
   background-color: #fcf9f0;
   color: #6b2f39;
   font-weight: normal;
-  padding: .25em .5em .25em;
 }
 
 p code, li code, blockquote code {
   font-size: .875em;
+  padding: .25em .5em .25em;
 }
 
 div.highlight {
@@ -35,7 +35,7 @@ pre.highlight {
   overflow: auto;
   padding: 0;
 
-  padding: 1.25em 0.8em;
+  padding: 1.25em 1em;
   white-space: pre;
   word-wrap: normal;
 
